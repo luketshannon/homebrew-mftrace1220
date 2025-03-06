@@ -12,5 +12,5 @@ brew tap luketshannon/mftracemtdbt2f
 ```
 and then
 ```
-brew install mftracemtdbt2f
+brew install --build-from-source mftrace-mtdbt2f
 ```

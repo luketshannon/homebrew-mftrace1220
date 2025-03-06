@@ -10,12 +10,6 @@ class MftraceMtdbt2f < Formula
     depends_on "python@3.9"
     depends_on "t1utils"
 
-    # Apply patch to fix tfm.py parsing bug
-    patch do
-        url "https://raw.githubusercontent.com/<user>/<repo>/main/patches/tfm.patch"
-        sha256 "<SHA256_of_patch_file>"
-    end
-
     def install
         ENV["PYTHON"] = which("python3.13")
         buildpath.install resource("manpage") if build.stable?
