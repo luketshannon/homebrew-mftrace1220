@@ -10,11 +10,17 @@ class MftraceMtdbt2f < Formula
     depends_on "python@3.9"
     depends_on "t1utils"
 
+    resource "manpage" do
+        url "https://github.com/hanwen/mftrace/raw/release/1.2.20/gf2pbm.1"
+        sha256 "f2a7234cba5f59237e3cc1f67e395046b381a012456d4e6e9963673cf35d46fb"
+    end
+    
     def install
-        ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
-        system "./configure", *std_configure_args
+        buildpath.install resource("manpage") if build.stable?
+        system "./autogen.sh" if build.head?
+        system "./configure", "--prefix=#{prefix}"
         system "make", "install"
-      end      
+    end  
 
     test do
         assert_match "mftrace #{version}", shell_output("#{bin}/mftrace --version")
