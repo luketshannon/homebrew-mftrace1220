@@ -8,7 +8,7 @@ two small changes to `mftrace@1.2.20` to keep it working with `mtdbt2f` in `pyth
 
 ## install
 ```
-brew tap luketshannon/mftrace-mtdbt2f
+brew tap luketshannon/mftracemtdbt2f
 ```
 and then
 ```
