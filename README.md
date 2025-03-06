@@ -12,7 +12,7 @@ First, add this tap:
 
 ```bash
 brew tap luketshannon/mftracemtdbt2f
-
+```
 and then
 ```bash
 brew install luketshannon/mftracemtdbt2f/mftrace-mtdbt2f
