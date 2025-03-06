@@ -26,7 +26,7 @@ class MftraceMtdbt2f < Formula
         ENV["PYTHON"] = which("python3.13")
         buildpath.install resource("manpage") if build.stable?
         system "./autogen.sh" if build.head?
-        system "./configure", *std_configure_args
+        # system "./configure", *std_configure_args
         system "make", "install"
     end
 
