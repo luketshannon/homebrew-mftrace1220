@@ -30,10 +30,13 @@ class MftraceMtdbt2f < Formula
     end
 
     def install
-      buildpath.install resource("manpage") if build.stable?
-      system "./autogen.sh" if build.head?
-      system "./configure", "--prefix=#{prefix}"
-      system "make", "install"
+    #   buildpath.install resource("manpage") if build.stable?
+    #   system "./autogen.sh" if build.head?
+    #   system "./configure", "--prefix=#{prefix}"
+    #   system "make", "install"
+        system "autoreconf", "-fvi"
+        system "./configure", *std_configure_args
+        system "make", "install"
     end
   
     test do
