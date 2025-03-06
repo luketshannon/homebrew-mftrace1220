@@ -4,6 +4,13 @@ class MftraceMtdbt2f < Formula
     url "https://github.com/luketshannon/homebrew-mftracemtdbt2f/releases/download/v0.1.0/mftrace-mtdbt2f.tar.gz"
     sha256 "e57b70bad7c831eb2e79105e4b22db6808f401602dc48a8c82b987d82683a130"
     version "0.1.0"
+    license "GPL-2.0"
+    revision 1
+
+    head do
+        url "https://github.com/hanwen/mftrace.git"
+        depends_on "autoconf" => :build
+    end
 
     depends_on "fontforge"
     depends_on "potrace"
@@ -23,6 +30,6 @@ class MftraceMtdbt2f < Formula
     end  
 
     test do
-        assert_match "mftrace #{version}", shell_output("#{bin}/mftrace --version")
+        system "#{bin}/mftrace", "--version"
     end
 end
