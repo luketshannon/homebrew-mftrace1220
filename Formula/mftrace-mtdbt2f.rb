@@ -11,12 +11,10 @@ class MftraceMtdbt2f < Formula
     depends_on "t1utils"
 
     def install
-        ENV["PYTHON"] = which("python3.13")
-        buildpath.install resource("manpage") if build.stable?
-        system "./autogen.sh" if build.head?
+        ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"
         system "./configure", *std_configure_args
         system "make", "install"
-    end
+      end      
 
     test do
         assert_match "mftrace #{version}", shell_output("#{bin}/mftrace --version")
