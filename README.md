@@ -7,10 +7,13 @@ two small changes to `mftrace@1.2.20` to keep it working with `mtdbt2f` in `pyth
 
 
 ## install
-```
+
+First, add this tap:
+
+```bash
 brew tap luketshannon/mftracemtdbt2f
-```
+
 and then
-```
-brew install --build-from-source mftrace-mtdbt2f
+```bash
+brew install luketshannon/mftracemtdbt2f/mftrace-mtdbt2f
 ```
