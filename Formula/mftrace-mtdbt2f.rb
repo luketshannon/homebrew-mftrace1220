@@ -16,4 +16,8 @@ class MftraceMtdbt2f < Formula
         system "./autogen.sh" if build.head?
         system "./configure", *std_configure_args
         system "make", "install"
-      end
+    end
+
+    test do
+        assert_match "mftrace #{version}", shell_output("#{bin}/mftrace --version")
+end
