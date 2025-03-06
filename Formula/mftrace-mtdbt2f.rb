@@ -20,4 +20,5 @@ class MftraceMtdbt2f < Formula
 
     test do
         assert_match "mftrace #{version}", shell_output("#{bin}/mftrace --version")
+    end
 end
