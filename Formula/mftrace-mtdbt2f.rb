@@ -1,4 +1,4 @@
-class Mftrace < Formula
+class MftraceMtdbt2f < Formula
     desc "Trace TeX bitmap font to PFA, PFB, or TTF font, patched for MTDBT2F."
     homepage "https://lilypond.org/mftrace/"
     url "https://github.com/luketshannon/homebrew-mftracemtdbt2f/releases/download/v0.1.0/mftrace-mtdbt2f.tar.gz"
