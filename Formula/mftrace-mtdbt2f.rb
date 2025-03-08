@@ -12,14 +12,21 @@ class MftraceMtdbt2f < Formula
     end
   
     head do
-      url "https://github.com/hanwen/mftrace.git", branch: "master"
-      depends_on "autoconf" => :build
+        url "https://github.com/hanwen/mftrace.git", branch: "master"
+        depends_on "autoconf" => :build
+        depends_on "automake" => :build
+        depends_on "libtool"  => :build
     end
   
     depends_on "fontforge"
     depends_on "potrace"
     depends_on "python@3.13"
     depends_on "t1utils"
+
+     # These are needed so we can run `autoreconf` or `./autogen.sh` in stable
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool"  => :build
   
     # Fixed in https://github.com/hanwen/mftrace/pull/14
     resource "manpage" do
@@ -28,11 +35,18 @@ class MftraceMtdbt2f < Formula
     end
   
     def install
-      ENV["PYTHON"] = which("python3.13")
-      buildpath.install resource("manpage") if build.stable?
-      system "./autogen.sh" if build.head?
-      system "./configure", *std_configure_args
-      system "make", "install"
+        # Point the build at Homebrew's python3.13
+        ENV["PYTHON"] = which("python3.13")
+    
+        # For stable builds, install the manpage resource
+        buildpath.install resource("manpage") if build.stable?
+    
+        # Run autoconf/automake to generate the configure script, if needed
+        # (Stable tarball may not contain one; head might have ./autogen.sh)
+        system "autoreconf", "-fvi"
+    
+        system "./configure", *std_configure_args
+        system "make", "install"
     end
   
     test do
