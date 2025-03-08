@@ -23,6 +23,8 @@ class MftraceMtdbt2f < Formula
     depends_on "python@3.13"
     depends_on "t1utils"
 
+    conflicts_with "mftrace", because: "both install the same binaries (mftrace, gf2pbm) and manpages"
+
      # These are needed so we can run `autoreconf` or `./autogen.sh` in stable
     depends_on "autoconf" => :build
     depends_on "automake" => :build
