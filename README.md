@@ -1,4 +1,4 @@
-# mftrace-mtdbt2f
+# mftrace1220
 two small changes to `mftrace@1.2.20` to keep it working with `mtdbt2f` in `python@3.9.12`:
 
 ## changes
@@ -11,9 +11,9 @@ two small changes to `mftrace@1.2.20` to keep it working with `mtdbt2f` in `pyth
 First, add this tap:
 
 ```bash
-brew tap luketshannon/mftracemtdbt2f
+brew tap o-r-g/mftrace1220
 ```
 and then
 ```bash
-brew install luketshannon/mftracemtdbt2f/mftrace-mtdbt2f
+brew install o-r-g/mftracemtdbt2f/mftrace1220
 ```
