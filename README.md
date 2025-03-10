@@ -15,5 +15,5 @@ brew tap o-r-g/mftrace1220
 ```
 and then
 ```bash
-brew install o-r-g/mftracemtdbt2f/mftrace1220
+brew install o-r-g/mftrace1220/mftrace1220
 ```
