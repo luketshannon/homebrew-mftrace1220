@@ -1,7 +1,7 @@
 class Mftrace1220 < Formula
     desc "Trace TeX bitmap font to PFA, PFB, or TTF font, patched for MTDBT2F."
     homepage "https://lilypond.org/mftrace/"
-    url "https://github.com/o-r-g/homebrew-mftrace1220/releases/download/v0.1.0/mftrace-mtdbt2f.tar.gz"
+    url "https://github.com/o-r-g/homebrew-mftrace1220/releases/download/v0.1.0/mftrace1220.tar.gz"
     sha256 "e57b70bad7c831eb2e79105e4b22db6808f401602dc48a8c82b987d82683a130"
     license "GPL-2.0-only"
     revision 1
